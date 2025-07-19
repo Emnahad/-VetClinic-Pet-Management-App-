@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: pet-backend
+    ports:
+      - "8080:8080"
+    networks:
+      - pet-network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: pet-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    networks:
+      - pet-network
+
+networks:
+  pet-network:
+    driver: bridge

@@ -1,0 +1,62 @@
+<div class="filters-container">
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Species</mat-label>
+    <mat-select [(ngModel)]="filterSpecies" (selectionChange)="onFilterChange()">
+      <mat-option value="">All</mat-option>
+      <mat-option *ngFor="let sp of speciesList" [value]="sp">{{ sp }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-field">
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="filterStatus" (selectionChange)="onFilterChange()">
+      <mat-option value="">All</mat-option>
+      <mat-option *ngFor="let st of statusList" [value]="st">{{ st }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" class="add-button" (click)="openAddPetDialog()">
+    <mat-icon>add</mat-icon>&nbsp;Add Pet
+  </button>
+</div>
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let pet"> {{pet.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="species">
+    <th mat-header-cell *matHeaderCellDef> Species </th>
+    <td mat-cell *matCellDef="let pet"> {{pet.species}} </td>
+  </ng-container>
+  <ng-container matColumnDef="breed">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Breed </th>
+    <td mat-cell *matCellDef="let pet"> {{pet.breed}} </td>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+    <td mat-cell *matCellDef="let pet"> {{pet.status}} </td>
+  </ng-container>
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Age </th>
+    <td mat-cell *matCellDef="let pet"> {{pet.age}} </td>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let pet">
+      <button mat-icon-button color="primary" (click)="editPet(pet)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deletePet(pet.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
