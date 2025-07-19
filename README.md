@@ -63,16 +63,9 @@ Update the connection string in application.properties:
 spring.data.mongodb.uri=mongodb://localhost:27017/vetclinicdb
 
 📡 API Overview
-Base URL: http://localhost:8080/api/pets
-Pets Endpoints:
-GET	/pets	Get all pets
-POST	/pets	Add a new pet
-PUT	/pets/{id}	Update pet info
-DELETE	/pets/{id}	Delete a pet
-
-Auth Endpoints:
-POST /auth/login
-POST /auth/register
+🧪 Swagger UI
+Accessible at:
+http://localhost:8080/swagger-ui/index.html
 
 Below are some demo screenshots of the VetClinic – Pet Management App:
 
@@ -98,9 +91,7 @@ Below are some demo screenshots of the VetClinic – Pet Management App:
 
 ### 🗄️ 5. MongoDB Record for Registered Pet
 ![MongoDB Record](demo-screenshots/mongodb-record.png)
-🧪 Swagger UI
-Accessible at:
-http://localhost:8080/swagger-ui/index.html
+
 
 🐳 Docker & Docker Compose (Optional)
 Docker Compose
