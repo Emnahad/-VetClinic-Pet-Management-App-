@@ -39,7 +39,7 @@ The backend runs on:
 http://localhost:8080
 
 
-###🌐 Frontend Setup
+### 🌐 Frontend Setup
 Navigate to frontend:
 cd frontend
 Install dependencies:
@@ -52,7 +52,7 @@ The frontend runs on:
 http://localhost:4200
 
 
-###☁️ MongoDB Setup
+### ☁️ MongoDB Setup
 Option 1: Local MongoDB
 Ensure MongoDB is running locally on:
 mongodb://localhost:27017
@@ -64,13 +64,40 @@ spring.data.mongodb.uri=mongodb://localhost:27017/vetclinicdb
 
 📡 API Overview
 Base URL: http://localhost:8080/api/pets
-Sample Endpoints:
-Method	Endpoint	Description
-GET	/api/pets	Get all pets
-POST	/api/pets	Add a new pet
-PUT	/api/pets/{id}	Update pet info
-DELETE	/api/pets/{id}	Delete a pet
+Pets Endpoints:
+GET	/pets	Get all pets
+POST	/pets	Add a new pet
+PUT	/pets/{id}	Update pet info
+DELETE	/pets/{id}	Delete a pet
 
+Auth Endpoints:
+POST /auth/login
+POST /auth/register
+
+Below are some demo screenshots of the VetClinic – Pet Management App:
+
+### 📝 1. Register Page
+![Register Page](demo-screenshots/register.png)
+
+---
+
+### 🔐 2. Login Page
+![Login Page](demo-screenshots/login.png)
+
+---
+
+### 📋 3. Pet List Page
+![Pet List Page](demo-screenshots/pet-list.png)
+
+---
+
+### ➕ 4. Add New Pet (Popup Form)
+![Add New Pet Popup](demo-screenshots/add-pet-popup.png)
+
+---
+
+### 🗄️ 5. MongoDB Record for Registered Pet
+![MongoDB Record](demo-screenshots/mongodb-record.png)
 🧪 Swagger UI
 Accessible at:
 http://localhost:8080/swagger-ui/index.html
