@@ -53,7 +53,7 @@ http://localhost:4200
 
 
 ### ☁️ MongoDB Setup
-Option 1: Local MongoDB
+Local MongoDB
 Ensure MongoDB is running locally on:
 mongodb://localhost:27017
 
