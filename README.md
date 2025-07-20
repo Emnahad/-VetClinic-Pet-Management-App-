@@ -108,10 +108,6 @@ GitHub Profile
 📄 License
 This project is licensed under the MIT License.
 
-yaml
-Copier
-Modifier
-
 ---
 
 Let me know if you'd like this adapted for deployment on Render, Heroku, Azure, etc.
